@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Student
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="txt-center">
+    <input type="text" class="input-cls" [(ngModel)]="msgData.deviceID" placeholder="Enter Device ID">
+    <input type="text" class="input-cls" [(ngModel)]="msgData.sessionID" placeholder="Enter Session ID">
+    <button class="btn btn-cls" (click)="sendMessage()">Set</button>
+  </div>
+  <!-- <button class="btn btn-cls" (click)="getMessage()">Get</button>
+  <div *ngIf="allMessage.length != 0">
+    <p *ngFor="let msg of allMessage">{{msg}}</p>
+  </div> -->
+</ion-content>
