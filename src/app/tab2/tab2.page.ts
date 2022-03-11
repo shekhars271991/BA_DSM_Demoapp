@@ -10,6 +10,8 @@ export class Tab2Page {
   
   msgData: any = {};
   allMessage: any = [];
+  allParticipants: any = [];
+
   constructor(
     private socket: Socket
   ) {
@@ -30,9 +32,15 @@ export class Tab2Page {
   }
   
   getMessage() {
+    console.log("receiving");
     this.socket.connect();
     this.socket.on('msgFromServer', (data) => {
+      console.log("skr got some message");
       this.allMessage.push(data)
+      console.log(data)
+    });
+    this.socket.on('participant-joined', (data) => {
+      this.allParticipants.push(data)
       console.log(data)
     });
   }
